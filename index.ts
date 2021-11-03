@@ -9,7 +9,7 @@ if (!process.env.DELETE_AFTER_TIME) throw new Error('DELETE_AFTER_TIME is missin
 if (!process.env.DELETE_AFTER_MESSAGES_COUNT) throw new Error('DELETE_AFTER_MESSAGES_COUNT is missing')
 
 const DELETE_AFTER_TIME_MS = (await import('ms')).default(process.env.DELETE_AFTER_TIME)
-const DELETE_AFTER_MESSAGES_COUNT = +process.env.DELETE_AFTER_TIME
+const DELETE_AFTER_MESSAGES_COUNT = +process.env.DELETE_AFTER_MESSAGES_COUNT
 
 type Data = { messages: Array<{ chatId: string; messageId: string; timestamp: number }> }
 const __dirname = dirname(fileURLToPath(import.meta.url))
